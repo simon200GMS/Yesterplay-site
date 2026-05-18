@@ -107,50 +107,51 @@ body{font-family:'Inter',sans-serif;background:#fff;color:var(--dark);overflow-x
 .trust-inner{max-width:1220px;margin:0 auto;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
 .ti{display:flex;align-items:center;gap:.6rem;color:rgba(255,255,255,.75);font-size:.88rem;font-weight:600}
 
-/* SHOWCASE */
-.showcase{padding:6rem 2.5rem}
-.showcase:nth-child(odd){background:#fff}
-.showcase:nth-child(even){background:#F8F7FF}
-.sc-inner{max-width:1220px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.showcase.flip .sc-inner{direction:rtl}
-.showcase.flip .sc-inner>*{direction:ltr}
+/* PRODUCTS GRID */
+.products-sec{padding:5.5rem 2.5rem;background:var(--light)}
+.products-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
 
-/* gallery side */
-.gal-main{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:1;
-  display:flex;align-items:center;justify-content:center;padding:2rem;
+.pcard{background:#fff;border-radius:24px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,.07);
+  transition:transform .35s cubic-bezier(.175,.885,.32,1.275),box-shadow .35s;
+  display:flex;flex-direction:column}
+.pcard:hover{transform:translateY(-8px);box-shadow:0 20px 56px rgba(0,0,0,.12)}
+
+.pcard-img-wrap{position:relative;padding:1.75rem;
+  display:flex;flex-direction:column;align-items:center;gap:.75rem;
   background:var(--light)}
-.gal-img{width:100%;height:100%;object-fit:contain;border-radius:16px;transition:opacity .25s ease}
+.pcard-badge{position:absolute;top:.9rem;left:.9rem;
+  background:var(--accent,var(--purple));color:#fff;
+  padding:.22rem .75rem;border-radius:50px;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.gal-main{width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;background:#EEEEF8}
+.gal-img{width:100%;height:100%;object-fit:contain;padding:.5rem;transition:opacity .22s ease;border-radius:16px}
 .gal-img.fading{opacity:0}
-.thumb-row{display:flex;gap:.6rem;margin-top:.9rem;flex-wrap:wrap}
-.thumb{width:62px;height:62px;object-fit:contain;border-radius:12px;
+.thumb-row{display:flex;gap:.45rem;justify-content:center;flex-wrap:wrap}
+.thumb{width:48px;height:48px;object-fit:contain;border-radius:10px;
   background:#EEEEF8;padding:3px;cursor:pointer;
   border:2px solid transparent;transition:all .2s;flex-shrink:0}
-.thumb:hover{transform:scale(1.08)}
+.thumb:hover{transform:scale(1.1)}
 .thumb.active{border-color:var(--accent,var(--purple))}
 
-/* info side */
-.sc-num{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:3px;
-  color:var(--accent,var(--purple));margin-bottom:.75rem}
-.sc-name{font-family:'Nunito',sans-serif;font-size:clamp(2rem,3.5vw,2.8rem);
-  font-weight:900;color:var(--dark);line-height:1.05;letter-spacing:-1.5px;margin-bottom:.6rem}
-.sc-age{display:inline-flex;align-items:center;gap:.4rem;background:rgba(0,0,0,.06);
-  padding:.28rem .9rem;border-radius:50px;font-size:.78rem;font-weight:700;margin-bottom:1.25rem}
-.sc-desc{font-size:1rem;color:#555;line-height:1.78;margin-bottom:1.5rem}
-.sc-feats{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:2rem}
-.sc-feat{display:flex;align-items:center;gap:.5rem;font-size:.86rem;font-weight:600;color:#333}
-.sc-feat::before{content:'✓';width:22px;height:22px;border-radius:50%;flex-shrink:0;
-  background:var(--accent,var(--purple));color:#fff;font-size:.68rem;font-weight:900;
-  display:flex;align-items:center;justify-content:center}
-.sc-price-row{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.sc-price{font-family:'Nunito',sans-serif;font-size:2.3rem;font-weight:900;color:var(--dark)}
-.sc-orig{font-size:.88rem;color:#aaa;text-decoration:line-through}
-.sc-atc{background:var(--accent,var(--purple));color:#fff;border:none;
-  padding:.9rem 2rem;border-radius:50px;font-weight:800;font-size:.95rem;cursor:pointer;
-  transition:all .3s;display:flex;align-items:center;gap:.5rem;
-  box-shadow:0 6px 24px rgba(0,0,0,.14)}
-.sc-atc:hover{transform:translateY(-3px);filter:brightness(1.1);box-shadow:0 14px 36px rgba(0,0,0,.2)}
-.sc-atc.added{background:#10B981}
-.sc-note{margin-top:1rem;font-size:.8rem;color:#999;display:flex;align-items:center;gap:.4rem}
+.pcard-body{padding:1.4rem 1.5rem 1.6rem;flex:1;display:flex;flex-direction:column}
+.pcard-age{font-size:.72rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:2px;color:var(--teal);margin-bottom:.4rem}
+.pcard-name{font-family:'Nunito',sans-serif;font-size:1.3rem;font-weight:900;
+  color:var(--dark);line-height:1.15;margin-bottom:.7rem}
+.pcard-desc{font-size:.88rem;color:#666;line-height:1.7;margin-bottom:1rem;flex:1}
+.pcard-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.25rem}
+.pcard-tag{background:#F0F0F8;color:var(--dark);padding:.2rem .6rem;
+  border-radius:50px;font-size:.72rem;font-weight:700}
+.pcard-footer{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.pcard-price{display:flex;flex-direction:column}
+.pcard-sale{font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900;color:var(--dark)}
+.pcard-orig{font-size:.78rem;color:#bbb;text-decoration:line-through}
+.pcard-atc{background:var(--dark);color:#fff;border:none;
+  padding:.7rem 1.2rem;border-radius:50px;font-weight:800;font-size:.82rem;
+  cursor:pointer;transition:all .3s;white-space:nowrap}
+.pcard-atc:hover{background:var(--accent,var(--purple));transform:scale(1.04)}
+.pcard-atc.added{background:#10B981}
 
 /* GALLERY GRID */
 .gallery-sec{padding:5.5rem 2.5rem;background:var(--dark)}
@@ -271,9 +272,7 @@ footer{background:#060412;padding:4rem 2.5rem 2rem;color:rgba(255,255,255,.5)}
   .hero-stats{justify-content:center}
   .hero-visual{order:-1}
   .hero-img{width:240px;height:240px}
-  .sc-inner{grid-template-columns:1fr;gap:2.5rem}
-  .showcase.flip .sc-inner{direction:ltr}
-  .sc-feats{grid-template-columns:1fr}
+  .products-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}
   .why-grid{grid-template-columns:repeat(2,1fr)}
   .reviews-grid{grid-template-columns:1fr;max-width:500px;margin:3rem auto 0}
   .photo-grid{grid-template-columns:repeat(2,1fr)}
@@ -343,12 +342,18 @@ footer{background:#060412;padding:4rem 2.5rem 2rem;color:rgba(255,255,255,.5)}
 </div>
 
 <!-- PRODUCTS -->
-<div id="products">
+<section class="products-sec" id="products">
+  <div class="sec-head">
+    <span class="sec-tag light">Shop the Collection</span>
+    <h2 class="sec-title reveal">Games That Build<br>Brilliant Minds</h2>
+    <p class="sec-sub reveal d1">Screen-free, hands-on toys that develop memory, focus, and critical thinking through pure play.</p>
+  </div>
+  <div class="products-grid">
 
-  <!-- 1: Memory Cube -->
-  <section class="showcase" style="--accent:#F97316">
-    <div class="sc-inner reveal">
-      <div>
+    <!-- Memory Cube -->
+    <div class="pcard reveal" style="--accent:#F97316">
+      <div class="pcard-img-wrap">
+        <span class="pcard-badge">Bestseller</span>
         <div class="gal-main">
           <img class="gal-img" id="main-cube" src="https://playroute.com/cdn/shop/files/Untitled-1.png" alt="Brain & Memory Cube">
         </div>
@@ -360,33 +365,28 @@ footer{background:#060412;padding:4rem 2.5rem 2rem;color:rgba(255,255,255,.5)}
           <img class="thumb thumb-cube" src="https://playroute.com/cdn/shop/files/IMG6.png" onclick="sw('cube',this.src,this)" onerror="this.style.display='none'">
         </div>
       </div>
-      <div>
-        <div class="sc-num">01 — Brain Games</div>
-        <h2 class="sc-name">Brain &amp; Memory Cube</h2>
-        <span class="sc-age">🎮 Ages 6–12</span>
-        <p class="sc-desc">Five electronic brain games packed into a compact 3&quot; cube — Follow Me, Remember Me, Chase Me, Catch Me, and a calming Glow Show mode. Sensory-friendly thick buttons, vibrant LEDs, and adjustable volume.</p>
-        <div class="sc-feats">
-          <span class="sc-feat">5 Game Modes</span>
-          <span class="sc-feat">LED Light System</span>
-          <span class="sc-feat">Adjustable Volume</span>
-          <span class="sc-feat">Sensory-Friendly</span>
-          <span class="sc-feat">Compact 3&quot; Cube</span>
-          <span class="sc-feat">STEM-Certified</span>
+      <div class="pcard-body">
+        <div class="pcard-age">Ages 6–12</div>
+        <div class="pcard-name">Brain &amp; Memory Cube</div>
+        <p class="pcard-desc">5 electronic brain games in one compact cube — Follow Me, Remember Me, Chase Me, Catch Me &amp; Glow Show. Sensory-friendly LEDs &amp; adjustable volume.</p>
+        <div class="pcard-tags">
+          <span class="pcard-tag">5 Games</span><span class="pcard-tag">STEM</span><span class="pcard-tag">Sensory</span><span class="pcard-tag">Travel-Ready</span>
         </div>
-        <div class="sc-price-row">
-          <div><div class="sc-price">$32.99</div><div class="sc-orig">Was $39.99</div></div>
-          <button class="sc-atc" onclick="addToCart('cube','Brain &amp; Memory Cube',32.99,'https://playroute.com/cdn/shop/files/Untitled-1.png',this)">Add to Cart +</button>
+        <div class="pcard-footer">
+          <div class="pcard-price">
+            <span class="pcard-sale">$32.99</span>
+            <span class="pcard-orig">$39.99</span>
+          </div>
+          <button class="pcard-atc" onclick="addToCart('cube','Brain &amp; Memory Cube',32.99,'https://playroute.com/cdn/shop/files/Untitled-1.png',this)">Add to Cart +</button>
         </div>
-        <p class="sc-note">🛡️ 90-day warranty · Free standard shipping</p>
       </div>
     </div>
-  </section>
 
-  <!-- 2: Tic-Tac (flipped) -->
-  <section class="showcase flip" style="--accent:#06B6D4">
-    <div class="sc-inner reveal">
-      <div>
-        <div class="gal-main" style="background:#F0FFFE">
+    <!-- Tic-Tac -->
+    <div class="pcard reveal d1" style="--accent:#06B6D4">
+      <div class="pcard-img-wrap">
+        <span class="pcard-badge">3-in-1</span>
+        <div class="gal-main" style="background:#EEF9FF">
           <img class="gal-img" id="main-tictac" src="https://playroute.com/cdn/shop/files/TicTacToe-Game_1_4.jpg" alt="Tic-Tac Memory Game">
         </div>
         <div class="thumb-row">
@@ -399,33 +399,27 @@ footer{background:#060412;padding:4rem 2.5rem 2rem;color:rgba(255,255,255,.5)}
           <img class="thumb thumb-tictac" src="https://playroute.com/cdn/shop/files/TicTacToe-Game_8_4.jpg" onclick="sw('tictac',this.src,this)" onerror="this.style.display='none'">
         </div>
       </div>
-      <div>
-        <div class="sc-num">02 — Classic Reimagined</div>
-        <h2 class="sc-name">Tic-Tac Memory Game</h2>
-        <span class="sc-age">🎮 Ages 7+</span>
-        <p class="sc-desc">Three classic modes in one handheld — single-player memory challenge, head-to-head 2-player Tic-Tac-Toe, and a brain-training mode. Light-up display, real-time scoring, voice prompts, and sound effects.</p>
-        <div class="sc-feats">
-          <span class="sc-feat">3 Game Modes</span>
-          <span class="sc-feat">2-Player Capable</span>
-          <span class="sc-feat">Light-Up Display</span>
-          <span class="sc-feat">Voice Prompts</span>
-          <span class="sc-feat">Real-Time Scoring</span>
-          <span class="sc-feat">Travel-Friendly</span>
+      <div class="pcard-body">
+        <div class="pcard-age">Ages 7+</div>
+        <div class="pcard-name">Tic-Tac Memory Game</div>
+        <p class="pcard-desc">Single-player memory, 2-player Tic-Tac-Toe &amp; brain-training mode. Light-up display, voice prompts, real-time scoring, and sound effects.</p>
+        <div class="pcard-tags">
+          <span class="pcard-tag">3 Modes</span><span class="pcard-tag">2-Player</span><span class="pcard-tag">Light-Up</span><span class="pcard-tag">Sound FX</span>
         </div>
-        <div class="sc-price-row">
-          <div><div class="sc-price">$29.99</div></div>
-          <button class="sc-atc" onclick="addToCart('tictac','Tic-Tac Memory Game',29.99,'https://playroute.com/cdn/shop/files/TicTacToe-Game_1_4.jpg',this)">Add to Cart +</button>
+        <div class="pcard-footer">
+          <div class="pcard-price">
+            <span class="pcard-sale">$29.99</span>
+          </div>
+          <button class="pcard-atc" onclick="addToCart('tictac','Tic-Tac Memory Game',29.99,'https://playroute.com/cdn/shop/files/TicTacToe-Game_1_4.jpg',this)">Add to Cart +</button>
         </div>
-        <p class="sc-note">🛡️ 90-day warranty · Free standard shipping</p>
       </div>
     </div>
-  </section>
 
-  <!-- 3: Light-Up -->
-  <section class="showcase" style="--accent:#8B5CF6">
-    <div class="sc-inner reveal">
-      <div>
-        <div class="gal-main" style="background:#F5F3FF">
+    <!-- Light-Up -->
+    <div class="pcard reveal d2" style="--accent:#8B5CF6">
+      <div class="pcard-img-wrap">
+        <span class="pcard-badge">8-in-1</span>
+        <div class="gal-main" style="background:#F3F0FF">
           <img class="gal-img" id="main-lightup" src="https://playroute.com/cdn/shop/files/MainImage.png" alt="Light-Up Memory Game">
         </div>
         <div class="thumb-row">
@@ -437,29 +431,25 @@ footer{background:#060412;padding:4rem 2.5rem 2rem;color:rgba(255,255,255,.5)}
           <img class="thumb thumb-lightup" src="https://playroute.com/cdn/shop/files/WhatsApp_Image_2025-11-05_at_1.25.14_PM_1.jpg" onclick="sw('lightup',this.src,this)" onerror="this.style.display='none'">
         </div>
       </div>
-      <div>
-        <div class="sc-num">03 — Ultimate Brain Trainer</div>
-        <h2 class="sc-name">Light-Up Memory Game</h2>
-        <span class="sc-age">🎮 Ages 6–12</span>
-        <p class="sc-desc">Eight illuminated brain challenges: Recall Rush, Catch Zone, Path Finder, Brain Board, Spin Twist, Dash Clash, Speed Hunt &amp; Glow Show. No apps. No internet. Just tap, react, and grow.</p>
-        <div class="sc-feats">
-          <span class="sc-feat">8 Game Modes</span>
-          <span class="sc-feat">Illuminated Buttons</span>
-          <span class="sc-feat">No App Required</span>
-          <span class="sc-feat">Pocket-Sized</span>
-          <span class="sc-feat">Gift-Ready</span>
-          <span class="sc-feat">Focus Training</span>
+      <div class="pcard-body">
+        <div class="pcard-age">Ages 6–12</div>
+        <div class="pcard-name">Light-Up Memory Game</div>
+        <p class="pcard-desc">8 illuminated brain challenges: Recall Rush, Catch Zone, Path Finder, Brain Board, Spin Twist, Dash Clash, Speed Hunt &amp; Glow Show. No apps needed.</p>
+        <div class="pcard-tags">
+          <span class="pcard-tag">8 Games</span><span class="pcard-tag">Light-Up</span><span class="pcard-tag">Handheld</span><span class="pcard-tag">Gift-Ready</span>
         </div>
-        <div class="sc-price-row">
-          <div><div class="sc-price">$32.99</div><div class="sc-orig">Was $39.99</div></div>
-          <button class="sc-atc" onclick="addToCart('lightup','Light-Up Memory Game',32.99,'https://playroute.com/cdn/shop/files/MainImage.png',this)">Add to Cart +</button>
+        <div class="pcard-footer">
+          <div class="pcard-price">
+            <span class="pcard-sale">$32.99</span>
+            <span class="pcard-orig">$39.99</span>
+          </div>
+          <button class="pcard-atc" onclick="addToCart('lightup','Light-Up Memory Game',32.99,'https://playroute.com/cdn/shop/files/MainImage.png',this)">Add to Cart +</button>
         </div>
-        <p class="sc-note">🛡️ 90-day warranty · Free standard shipping</p>
       </div>
     </div>
-  </section>
 
-</div>
+  </div>
+</section>
 
 
 <!-- WHY -->

@@ -109,7 +109,7 @@ body{font-family:'Inter',sans-serif;background:#fff;color:var(--dark);overflow-x
 
 /* PRODUCTS GRID */
 .products-sec{padding:5.5rem 2.5rem;background:var(--light)}
-.products-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+.products-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
 
 .pcard{background:#fff;border-radius:24px;overflow:hidden;
   box-shadow:0 4px 24px rgba(0,0,0,.07);
@@ -272,7 +272,8 @@ footer{background:#060412;padding:4rem 2.5rem 2rem;color:rgba(255,255,255,.5)}
   .hero-stats{justify-content:center}
   .hero-visual{order:-1}
   .hero-img{width:240px;height:240px}
-  .products-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}
+  .products-grid{grid-template-columns:repeat(2,1fr);max-width:100%}
+  @media(max-width:640px){.products-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
   .why-grid{grid-template-columns:repeat(2,1fr)}
   .reviews-grid{grid-template-columns:1fr;max-width:500px;margin:3rem auto 0}
   .photo-grid{grid-template-columns:repeat(2,1fr)}
@@ -444,6 +445,30 @@ footer{background:#060412;padding:4rem 2.5rem 2rem;color:rgba(255,255,255,.5)}
             <span class="pcard-orig">$39.99</span>
           </div>
           <button class="pcard-atc" onclick="addToCart('lightup','Light-Up Memory Game',32.99,'https://playroute.com/cdn/shop/files/MainImage.png',this)">Add to Cart +</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bubble Solution -->
+    <div class="pcard reveal d3" style="--accent:#22C55E">
+      <div class="pcard-img-wrap">
+        <span class="pcard-badge">2-Pack</span>
+        <div class="gal-main" style="background:#F0FFF4">
+          <img class="gal-img" src="https://playroute.com/cdn/shop/files/71SxzYgFqnL._AC_SL1500.jpg" alt="Bubble Solution 2-Pack">
+        </div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-age">Ages 3+</div>
+        <div class="pcard-name">Bubble Solution 2-Pack</div>
+        <p class="pcard-desc">4L / 136oz of ready-to-use bubble refill. Works with bubble machines, guns, wands &amp; mowers. Non-toxic, child-safe, leak-proof easy-grip bottles.</p>
+        <div class="pcard-tags">
+          <span class="pcard-tag">Ready-to-Use</span><span class="pcard-tag">Non-Toxic</span><span class="pcard-tag">4L / 136oz</span><span class="pcard-tag">Child-Safe</span>
+        </div>
+        <div class="pcard-footer">
+          <div class="pcard-price">
+            <span class="pcard-sale">$21.99</span>
+          </div>
+          <button class="pcard-atc" onclick="addToCart('bubble','Bubble Solution 2-Pack',21.99,'https://playroute.com/cdn/shop/files/71SxzYgFqnL._AC_SL1500.jpg',this)">Add to Cart +</button>
         </div>
       </div>
     </div>

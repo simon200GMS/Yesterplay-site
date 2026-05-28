@@ -484,8 +484,8 @@ footer{background:#060412;padding:4rem 2.5rem 2rem;color:rgba(255,255,255,.5)}
     <div class="pcard reveal d3" style="--accent:#22C55E">
       <div class="pcard-img-wrap">
         <span class="pcard-badge">2-Pack</span>
-        <div class="gal-main" style="background:#F0FFF4">
-          <img class="gal-img" src="https://playroute.com/cdn/shop/files/71SxzYgFqnL._AC_SL1500.jpg" alt="Bubble Solution 2-Pack">
+        <div class="gal-main" style="background:#fff">
+          <img class="gal-img" src="Bubble.jpg" alt="Bubble Solution 2-Pack">
         </div>
       </div>
       <div class="pcard-body">
@@ -499,7 +499,7 @@ footer{background:#060412;padding:4rem 2.5rem 2rem;color:rgba(255,255,255,.5)}
           <div class="pcard-price">
             <span class="pcard-sale">$21.99</span>
           </div>
-          <button class="pcard-atc" onclick="addToCart('bubble','Bubble Solution 2-Pack',21.99,'https://playroute.com/cdn/shop/files/71SxzYgFqnL._AC_SL1500.jpg',this)">Add to Cart +</button>
+          <button class="pcard-atc" onclick="addToCart('bubble','Bubble Solution 2-Pack',21.99,'Bubble.jpg',this)">Add to Cart +</button>
         </div>
       </div>
     </div>
@@ -713,7 +713,7 @@ function checkout() {
     .map(i => `${SHOPIFY_VARIANTS[i.id]}:${i.qty}`)
     .join(',');
   if (!items) return;
-  window.location.href = `https://${SHOPIFY_STORE}/cart/${items}`;
+  window.open(`https://${SHOPIFY_STORE}/cart/${items}`, '_blank');
 }
 
 function handleNL(e) {

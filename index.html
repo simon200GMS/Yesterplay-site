@@ -598,6 +598,15 @@ footer{background:#060412;padding:4rem 2.5rem 2rem;color:rgba(255,255,255,.5)}
 <script>
 let cart = JSON.parse(localStorage.getItem('yp3') || '[]');
 
+/* Shopify variant ID map */
+const SHOPIFY_VARIANTS = {
+  cube:   '44313302794539',
+  tictac: '53364273971499',
+  lightup:'53364273512747',
+  bubble: '53622058844459'
+};
+const SHOPIFY_STORE = 'playroute.myshopify.com';
+
 /* nav */
 addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', scrollY > 60));
 
@@ -699,7 +708,12 @@ function render() {
 
 function checkout() {
   if (!cart.length) return;
-  alert("Thanks for your order! Our team will be in touch soon. 🎉");
+  const items = cart
+    .filter(i => SHOPIFY_VARIANTS[i.id])
+    .map(i => `${SHOPIFY_VARIANTS[i.id]}:${i.qty}`)
+    .join(',');
+  if (!items) return;
+  window.location.href = `https://${SHOPIFY_STORE}/cart/${items}`;
 }
 
 function handleNL(e) {

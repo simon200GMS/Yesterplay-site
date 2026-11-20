@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!-- Source for assets/Yesterplay-Catalog.pdf. Rebuild: python catalog/build.py -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Yesterplay Catalog</title>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;700&display=block" rel="stylesheet">
+<style>
+:root{--coral:#F94730;--coral-text:#C4341A;--purple:#4C4BE3;--teal:#49BFBF;--teal-text:#2D8080;--mint:#AFD9D0;--citron:#EAEA6C;--ink:#1A1A1A;--white:#fff}
+@page{size:8.5in 11in;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff}
+body{font-family:'Afacad',sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;break-after:page}
+.page:last-child{page-break-after:auto;break-after:auto}
+h1,h2,h3{font-weight:700;line-height:1.02;letter-spacing:-.01em}
+.label{font-weight:700;font-size:9.5pt;letter-spacing:.16em;text-transform:uppercase}
+.pill{display:inline-block;padding:.32em 1.1em;border-radius:99px}
+.shape{position:absolute}
+.circle{border-radius:50%}
+.folio{position:absolute;bottom:.42in;left:.6in;right:.6in;display:flex;justify-content:space-between;font-size:9pt;font-weight:500}
+.folio b{font-weight:700}
+sup{font-size:.42em;vertical-align:super;font-weight:500}
+
+/* ── 1 COVER ── */
+.cover{background:var(--white)}
+.cover .c1{width:6.2in;height:6.2in;background:var(--coral);right:-1.6in;top:-1.5in}
+.cover .c2{width:3in;height:3in;background:var(--purple);border-radius:100% 0 0 0;left:0;bottom:0;border-radius:0 100% 0 0}
+.cover .c3{width:0;height:0;border-left:.75in solid transparent;border-right:.75in solid transparent;border-bottom:1.3in solid var(--teal);right:.7in;bottom:2.15in}
+.cover .c4{width:.5in;height:.5in;background:var(--citron);left:3.4in;bottom:1.1in}
+.cover .c5{width:1.5in;height:.75in;border-radius:.75in .75in 0 0;background:var(--mint);right:2.2in;bottom:0}
+.cover .logo{position:absolute;left:.6in;top:.6in;width:3.3in}
+.cover .title{position:absolute;left:.6in;top:2.35in}
+.cover .title .label{color:var(--coral-text)}
+.cover h1{font-size:62pt;margin:.12in 0 .14in}
+.cover .sub{font-size:16pt;max-width:4.3in;line-height:1.25}
+.cover .prods{position:absolute;left:0;right:0;top:4.95in;height:4.4in}
+.cover .prods img{position:absolute;filter:drop-shadow(0 .2in .2in rgba(26,26,26,.28))}
+.cover .p-t{width:2.85in;left:.55in;top:.55in;transform:rotate(-8deg)}
+.cover .p-c{width:2.7in;left:2.9in;top:1.25in;z-index:2}
+.cover .p-g{width:2.75in;left:5.2in;top:.25in;transform:rotate(7deg)}
+.cover .tag{position:absolute;right:.6in;bottom:.55in;text-align:right;color:var(--ink);font-weight:700;font-size:13pt;line-height:1.3;z-index:3}
+.cover .tag span{color:var(--white);background:var(--purple);padding:.04in .14in;border-radius:4px}
+
+/* ── 2 BIG IDEA ── */
+.idea{background:var(--coral)}
+.idea .inner{position:absolute;inset:.75in .7in}
+.idea .pill{background:var(--ink);color:var(--white)}
+.idea h2{font-size:46pt;margin:.22in 0 .12in}
+.idea .now{font-size:20pt;font-weight:700;color:var(--white);background:var(--purple);display:inline-block;padding:.03in .16in;border-radius:6px}
+.idea .cols{display:grid;grid-template-columns:1fr 1fr;gap:.35in;font-size:11.6pt;line-height:1.5;margin-top:.38in}
+.idea .halfc{width:2.6in;height:1.3in;border-radius:0 0 1.3in 1.3in;background:var(--purple);right:-.4in;top:0}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:.18in;margin-top:.45in}
+.feat{background:var(--white);border-radius:.25in;padding:.26in .28in;display:grid;grid-template-columns:.62in 1fr;gap:.2in;align-items:start}
+.feat h3{font-size:16pt;margin-bottom:.05in}
+.feat p{font-size:10.6pt;line-height:1.4}
+.ico{width:.55in;height:.55in;position:relative}
+.ico-circle{border-radius:50%;background:var(--coral)}
+.ico-half{height:.28in;margin-top:.27in;border-radius:.28in .28in 0 0;background:var(--teal)}
+.ico-arch{border-radius:.28in .28in 0 0;background:var(--purple)}
+.ico-pill{height:.24in;width:.62in;margin-top:.16in;border-radius:99px;background:var(--coral)}
+.ico-pill::after{content:'';position:absolute;right:-.06in;top:-.13in;width:.13in;height:.13in;border-radius:50%;background:var(--mint)}
+.idea .folio{color:var(--ink)}
+
+/* ── PRODUCT PAGES ── */
+.prod .hero{position:absolute;left:0;right:0;top:0;height:5.25in}
+.prod .block{position:absolute;left:.6in;right:.6in;top:1.35in;height:3.6in;border-radius:.35in}
+.prod .wm{position:absolute;left:.6in;top:.38in;height:.95in}
+.prod .shot{position:absolute;z-index:2;left:50%;top:1.02in;height:4.1in;transform:translateX(-50%);filter:drop-shadow(0 .25in .25in rgba(26,26,26,.3))}
+.prod .age{position:absolute;right:.6in;top:.6in;border:2px solid var(--ink);border-radius:99px;font-weight:700;font-size:11pt;letter-spacing:.12em;padding:.05in .2in}
+.prod .body{position:absolute;left:.6in;right:.6in;top:5.45in;display:grid;grid-template-columns:1.25fr 1fr;gap:.42in}
+.prod h2{font-size:42pt}
+.prod .skills{margin:.1in 0 .2in;font-weight:700;font-size:12.5pt;color:var(--teal-text)}
+.prod .skills i{font-style:normal;color:var(--mint);margin:0 .08in}
+.prod .desc{font-size:12pt;line-height:1.5}
+.prod .line{margin-top:.28in;font-size:19pt;font-weight:700;line-height:1.15}
+.prod .line em{font-style:normal;color:var(--coral)}
+.spec{background:#F6F6F4;border-radius:.25in;padding:.26in .28in}
+.spec h3{font-size:10pt;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.12in}
+.spec dl{display:grid;grid-template-columns:auto 1fr;gap:.07in .16in;font-size:10.8pt}
+.spec dt{font-weight:700}
+.spec .modes{margin-top:.18in;padding-top:.16in;border-top:2px solid var(--mint)}
+.spec .modes ol.one{columns:1}
+.spec .modes ol{list-style:none;columns:2;column-gap:.18in;font-size:10.4pt;line-height:1.6}
+.spec .modes li::before{content:'';display:inline-block;width:.075in;height:.075in;border-radius:50%;margin-right:.08in;vertical-align:middle;background:var(--dot)}
+.price{margin-top:.2in;display:flex;justify-content:space-between;align-items:baseline;background:var(--ink);color:var(--white);border-radius:.18in;padding:.14in .24in}
+.price span{font-size:9.5pt;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.price b{font-size:20pt}
+
+/* ── LINEUP ── */
+.lineup .inner{position:absolute;inset:.7in .6in}
+.lineup .pill{background:var(--coral)}
+.lineup h2{font-size:40pt;margin:.2in 0 .1in}
+.lineup .intro{font-size:12.5pt;max-width:5in}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.18in;margin-top:.4in}
+.card{border-radius:.25in;overflow:hidden;border:2px solid #eee}
+.card .top{height:2in;display:grid;place-items:center;position:relative}
+.card .top img{height:1.75in;filter:drop-shadow(0 .1in .1in rgba(26,26,26,.25))}
+.card .bd{padding:.18in .2in .22in}
+.card h3{font-size:21pt}
+.card .sk{min-height:2.6em;font-size:9.6pt;font-weight:700;color:var(--teal-text);margin:.03in 0 .12in}
+.card table{width:100%;font-size:10pt;border-collapse:collapse}
+.card td{padding:.045in 0;border-top:1px solid #eee}
+.card td:last-child{text-align:right;font-weight:700}
+.lineup .strip{position:absolute;left:.6in;right:.6in;bottom:1.05in;display:grid;grid-template-columns:repeat(4,1fr);gap:.12in}
+.lineup .strip img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:.18in}
+
+/* ── HEALTHIER PLAY ── */
+.play{background:var(--white)}
+.play .left{position:absolute;left:0;top:0;bottom:0;width:4.1in;background:var(--teal);padding:.75in .55in}
+.play .left .pill{background:var(--white)}
+.play h2{font-size:38pt;margin:.22in 0 .3in}
+.uses{display:grid;gap:.2in}
+.use{background:var(--white);border-radius:.22in;padding:.2in .24in}
+.use h3{font-size:15pt;margin-bottom:.04in}
+.use p{font-size:10.6pt;line-height:1.4}
+.play .gift{margin-top:.3in;font-weight:700;font-size:15pt;display:flex;align-items:center;gap:.12in}
+.play .gift::before{content:'';width:.18in;height:.18in;border-radius:50%;background:var(--citron);box-shadow:0 0 0 2px var(--ink)}
+.play .photos{position:absolute;left:4.35in;right:.5in;top:.75in;display:grid;gap:.18in}
+.play .photos img{width:100%;height:3.55in;object-fit:cover;border-radius:.25in}
+.play .say{position:absolute;left:4.35in;right:.5in;bottom:.95in;font-size:20pt;font-weight:700;line-height:1.15}
+.play .say em{font-style:normal;color:var(--coral)}
+
+/* ── BACK COVER ── */
+.back{background:var(--purple);color:var(--white)}
+.back .inner{position:absolute;inset:.85in .7in}
+.back .label{color:var(--citron)}
+.back h2{font-size:44pt;margin:.18in 0 .2in}
+.back .lead{font-size:13.5pt;line-height:1.45;max-width:5.2in}
+.back .edu{display:inline-flex;align-items:center;gap:.12in;margin-top:.25in;font-weight:700;font-size:13pt}
+.back .edu::before{content:'';width:.16in;height:.16in;border-radius:50%;background:var(--citron)}
+.back .ways{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.18in;margin-top:.5in}
+.back .way{background:var(--white);color:var(--ink);border-radius:.22in;padding:.24in}
+.back .way .n{width:.42in;height:.42in;border-radius:50%;background:var(--coral);display:grid;place-items:center;font-weight:700;font-size:14pt;margin-bottom:.14in}
+.back .way h3{font-size:16pt;margin-bottom:.05in}
+.back .way p{font-size:10.4pt;line-height:1.4}
+.back .contact{position:absolute;left:.7in;right:.7in;bottom:.85in;display:grid;grid-template-columns:auto 1fr;gap:.5in;align-items:end}
+.back .contact img{width:2.9in}
+.back .contact .info{font-size:12.5pt;line-height:1.6;text-align:right}
+.back .contact .info b{font-size:15pt}
+.back .d1{width:2.4in;height:2.4in;background:var(--coral);right:-.8in;top:-.8in}
+.back .d2{width:.7in;height:.7in;background:var(--teal);right:1.9in;top:.5in}
+.back .bunt{position:absolute;left:.7in;right:.7in;bottom:2.55in;display:flex;gap:.05in}
+.back .bunt i{width:0;height:0;border-left:.16in solid transparent;border-right:.16in solid transparent;border-top:.28in solid var(--coral)}
+.back .bunt i:nth-child(3n+2){border-top-color:var(--white)}
+.back .bunt i:nth-child(3n){border-top-color:var(--teal)}
+.back .fine{position:absolute;left:.7in;right:.7in;bottom:.4in;font-size:8.5pt;opacity:.8;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<!-- 1 · COVER -->
+<section class="page cover">
+  <span class="shape circle c1"></span><span class="shape c2"></span><span class="shape c3"></span>
+  <span class="shape circle c4"></span><span class="shape c5"></span>
+  <img class="logo" src="../assets/logo-badge.svg" alt="Yesterplay">
+  <div class="title">
+    <div class="label">The Collection · 2026</div>
+    <h1>Screen-free<br>play, rebuilt.</h1>
+    <p class="sub">The games you grew up with, engineered for how children learn now.</p>
+  </div>
+  <div class="prods">
+    <img class="p-t" src="../assets/tixxo.webp" alt="">
+    <img class="p-c" src="../assets/cubit.webp" alt="">
+    <img class="p-g" src="../assets/coggo.webp" alt="">
+  </div>
+  <div class="tag">Tixxo<sup>®</sup> · Cubit<sup>®</sup> · Coggo<sup>®</sup><br><span>Zero screens.</span></div>
+</section>
+
+<!-- 2 · THE BIG IDEA -->
+<section class="page idea">
+  <span class="shape halfc"></span>
+  <div class="inner">
+    <span class="label pill">The Big Idea</span>
+    <h2>Once upon a time,<br>play built minds.</h2>
+    <span class="now">That time is now.</span>
+    <div class="cols">
+      <p>Toys have come a long way. The average child carries their own smartphone in their pocket. <b>That’s not progress, though.</b> For child development, less is more. Unfettered Internet access, reward-heavy gamification and short-form stimulation wear down a child’s ability to focus, process and think things through.</p>
+      <p><b>Yesterplay strikes the middle ground between board games and iPhones.</b> Each toy is built for maximum engagement and maximum development. Pocketable forms, solo and team play, and modern light and sound keep children involved. The retro heart of every game keeps minds firing in all the right ways.</p>
+    </div>
+    <div class="feats">
+      <div class="feat"><div class="ico ico-circle"></div><div><h3>100% Offline</h3><p>No connection, no WiFi chip, no OTA updates, and no hacking risk.</p></div></div>
+      <div class="feat"><div class="ico ico-half"></div><div><h3>Endlessly Engaging</h3><p>Modern features designed to grab the attention of a digital generation.</p></div></div>
+      <div class="feat"><div class="ico ico-arch"></div><div><h3>Built for Growing Minds</h3><p>Every game trains recall, speed and pattern-spotting, without ever feeling like a lesson.</p></div></div>
+      <div class="feat"><div class="ico ico-pill"></div><div><h3>Durable Electronics</h3><p>Built tough. Minimal moving pieces. Good old replaceable alkaline batteries.</p></div></div>
+    </div>
+  </div>
+  <div class="folio"><b>Yesterplay</b><span>Mind Their Future® · 02</span></div>
+</section>
+
+<!-- 3 · TIXXO -->
+<section class="page prod">
+  <div class="hero">
+    <img class="wm" src="wm-tixxo.svg" alt="tixxo">
+    <span class="age">AGES 6+</span>
+    <div class="block" style="background:var(--purple)"></div>
+    <img class="shot" src="../assets/tixxo.webp" alt="Tixxo">
+  </div>
+  <div class="body">
+    <div>
+      <h2>Tixxo<sup>®</sup></h2>
+      <div class="skills">Logic<i>•</i>Collaboration<i>•</i>Memory</div>
+      <p class="desc">Play against the computer, compete with a friend, or discover an all-new sequence memory game inside the classic Tic-Tac-Toe grid. The touchscreen interface, affirming game sounds and bright orange casing strike Yesterplay’s perfect balance: engaging without addictive.</p>
+      <p class="line">Three ways to play.<br><em>One classic grid.</em></p>
+    </div>
+    <div>
+      <div class="spec" style="--dot:var(--purple)">
+        <h3>At a glance</h3>
+        <dl>
+          <dt>Ages</dt><dd>6+</dd>
+          <dt>Players</dt><dd>1 or 2</dd>
+          <dt>Screen</dt><dd>Lit grid, timer &amp; score</dd>
+          <dt>Power</dt><dd>Replaceable alkaline batteries</dd>
+          <dt>Connectivity</dt><dd>None. 100% offline</dd>
+        </dl>
+        <div class="modes"><ol class="one"><li>vs. Computer</li><li>2-Player Duel</li><li>Sequence Memory</li></ol></div>
+      </div>
+      <div class="price"><span>Retail</span><b>$29.99</b></div>
+    </div>
+  </div>
+  <div class="folio"><b>Yesterplay</b><span>The Collection · 03</span></div>
+</section>
+
+<!-- 4 · CUBIT -->
+<section class="page prod">
+  <div class="hero">
+    <img class="wm" src="wm-cubit.svg" alt="cubit">
+    <span class="age">AGES 6+</span>
+    <div class="block" style="background:var(--coral)"></div>
+    <img class="shot" src="../assets/cubit.webp" alt="Cubit">
+  </div>
+  <div class="body">
+    <div>
+      <h2>Cubit<sup>®</sup></h2>
+      <div class="skills">Patterns<i>•</i>Self-Regulation<i>•</i>Memory</div>
+      <p class="desc">Inspired by the music-activated disco balls of the 1990s, Cubit® packs four game modes and an enchanting lightshow mode into a fun, 3D interface. Every turn builds motor dexterity, hand-eye coordination and memorization.</p>
+      <p class="line">Five games. One cube.<br><em>Zero screens.</em></p>
+    </div>
+    <div>
+      <div class="spec" style="--dot:var(--coral)">
+        <h3>At a glance</h3>
+        <dl>
+          <dt>Ages</dt><dd>6+</dd>
+          <dt>Players</dt><dd>Solo or pass-and-play</dd>
+          <dt>Format</dt><dd>3D light-up cube</dd>
+          <dt>Power</dt><dd>Replaceable alkaline batteries</dd>
+          <dt>Connectivity</dt><dd>None. 100% offline</dd>
+        </dl>
+        <div class="modes"><ol><li>Catch Me</li><li>Follow Me</li><li>Remember Me</li><li>Chase Me</li><li>Lightshow</li></ol></div>
+      </div>
+      <div class="price"><span>Retail</span><b>$32.99</b></div>
+    </div>
+  </div>
+  <div class="folio"><b>Yesterplay</b><span>The Collection · 04</span></div>
+</section>
+
+<!-- 5 · COGGO -->
+<section class="page prod">
+  <div class="hero">
+    <span class="age" style="right:auto;left:.6in">AGES 6+</span>
+    <div class="block" style="background:var(--teal)"></div>
+    <img class="shot" src="../assets/coggo.webp" alt="Coggo">
+  </div>
+  <div class="body">
+    <div>
+      <h2>Coggo<sup>®</sup></h2>
+      <div class="skills">Coordination<i>•</i>Focus<i>•</i>Self-Regulation</div>
+      <p class="desc">Perfect for travel, Coggo® exercises focus, coordination, quick-thinking and memory. Seven exciting games keep things fun, while the Glow Show offers relaxing downtime after hours of high-octane play.</p>
+      <p class="line">Seven games.<br><em>One Glow Show.</em></p>
+    </div>
+    <div>
+      <div class="spec" style="--dot:var(--teal)">
+        <h3>At a glance</h3>
+        <dl>
+          <dt>Ages</dt><dd>6+</dd>
+          <dt>Players</dt><dd>Solo or pass-and-play</dd>
+          <dt>Format</dt><dd>Handheld light-up board</dd>
+          <dt>Power</dt><dd>Replaceable alkaline batteries</dd>
+          <dt>Connectivity</dt><dd>None. 100% offline</dd>
+        </dl>
+        <div class="modes"><ol><li>Recall Rush</li><li>Catch Zone</li><li>Path Finder</li><li>Brainboard</li><li>Spin Twist</li><li>Dash Clash</li><li>Speed Hunt</li><li>Glow Show</li></ol></div>
+      </div>
+      <div class="price"><span>Retail</span><b>$32.99</b></div>
+    </div>
+  </div>
+  <div class="folio"><b>Yesterplay</b><span>The Collection · 05</span></div>
+</section>
+
+<!-- 6 · LINE-UP -->
+<section class="page lineup">
+  <div class="inner">
+    <span class="label pill">The Line-up</span>
+    <h2>Pick their game.</h2>
+    <p class="intro">Three toys, sixteen ways to play. Every one is offline, tough and built to be played again and again.</p>
+    <div class="cards">
+      <div class="card"><div class="top" style="background:var(--purple)"><img src="../assets/tixxo.webp" alt=""></div><div class="bd"><h3>Tixxo<sup>®</sup></h3><div class="sk">Logic · Collaboration · Memory</div>
+        <table><tr><td>Ages</td><td>6+</td></tr><tr><td>Ways to play</td><td>3</td></tr><tr><td>Players</td><td>1–2</td></tr><tr><td>Retail</td><td>$29.99</td></tr></table></div></div>
+      <div class="card"><div class="top" style="background:var(--coral)"><img src="../assets/cubit.webp" alt=""></div><div class="bd"><h3>Cubit<sup>®</sup></h3><div class="sk">Patterns · Self-Regulation · Memory</div>
+        <table><tr><td>Ages</td><td>6+</td></tr><tr><td>Ways to play</td><td>5</td></tr><tr><td>Players</td><td>1+</td></tr><tr><td>Retail</td><td>$32.99</td></tr></table></div></div>
+      <div class="card"><div class="top" style="background:var(--teal)"><img src="../assets/coggo.webp" alt=""></div><div class="bd"><h3>Coggo<sup>®</sup></h3><div class="sk">Coordination · Focus · Self-Regulation</div>
+        <table><tr><td>Ages</td><td>6+</td></tr><tr><td>Ways to play</td><td>8</td></tr><tr><td>Players</td><td>1+</td></tr><tr><td>Retail</td><td>$32.99</td></tr></table></div></div>
+    </div>
+  </div>
+  <div class="strip">
+    <img src="../assets/life-2.webp" alt=""><img src="../assets/life-1.webp" alt=""><img src="../assets/life-4.webp" alt=""><img src="../assets/cubit-box.webp" alt="">
+  </div>
+  <div class="folio"><b>Yesterplay</b><span>The Collection · 06</span></div>
+</section>
+
+<!-- 7 · FOR HEALTHIER PLAY -->
+<section class="page play">
+  <div class="left">
+    <span class="label pill">For Healthier Play</span>
+    <h2>Wherever kids need a break from screens.</h2>
+    <div class="uses">
+      <div class="use"><h3>Schools &amp; Homeschools</h3><p>Brain breaks, rewards corners and indoor recess that sharpen focus.</p></div>
+      <div class="use"><h3>Daycares &amp; Nannies</h3><p>Durable, offline play that holds attention without a tablet.</p></div>
+      <div class="use"><h3>Travel &amp; Roadtripping</h3><p>Pocketable games for cars, planes and waiting rooms.</p></div>
+    </div>
+    <div class="gift">Great as milestone gifts.</div>
+  </div>
+  <div class="photos">
+    <img src="../assets/life-3.webp" alt="">
+    <img src="../assets/life-2.webp" alt="" style="object-position:center 30%">
+  </div>
+  <div class="say">Press it. Beat it.<br><em>Do it again.</em></div>
+  <div class="folio" style="left:4.35in"><b>Yesterplay</b><span>The Collection · 07</span></div>
+</section>
+
+<!-- 8 · BACK COVER -->
+<section class="page back">
+  <span class="shape circle d1"></span><span class="shape circle d2"></span>
+  <div class="inner">
+    <span class="label">Where to Buy</span>
+    <h2>Bring Yesterplay<br>to your shelves.</h2>
+    <p class="lead">Sold on online marketplaces, at big box retail and through direct sales. We invite resellers to help us meet the growing demand for mindful toys.</p>
+    <div class="edu">Educational pricing available.</div>
+    <div class="ways">
+      <div class="way"><div class="n">1</div><h3>Buy Bulk</h3><p>Schools, daycares and gifting programs. Ask about volume pricing.</p></div>
+      <div class="way"><div class="n">2</div><h3>Sell Yesterplay</h3><p>Stock our toys in your store or on your marketplace.</p></div>
+      <div class="way"><div class="n">3</div><h3>Shop Direct</h3><p>Order online at yesterplay.com and we ship to your door.</p></div>
+    </div>
+  </div>
+  <div class="bunt"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="contact">
+    <img src="../assets/logo-badge.svg" alt="Yesterplay">
+    <div class="info"><b>Let’s talk toys.</b><br>info@yesterplay.com · (201) 252-7025<br>101 Henley Ave, Suite 401, New Milford, NJ 07646</div>
+  </div>
+  <div class="fine"><span>© 2026 Yesterplay • All Rights Reserved</span><span>Prices are suggested retail in USD and may change.</span></div>
+</section>
+
+</body>
+</html>

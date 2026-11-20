@@ -36,18 +36,17 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
 .cover h1{font-size:58pt;margin:.02in 0 .28in;color:var(--coral)}
 .cover h1.script{line-height:1.12}
 .cover .sub{font-size:16pt;max-width:4.3in;line-height:1.25}
-.cover .stage{position:absolute;left:0;right:0;bottom:1.05in;height:5.6in}
-.cover .arch{position:absolute;left:.75in;right:.75in;bottom:0;height:3.5in;border-radius:3.5in 3.5in 0 0;background:var(--purple)}
-.cover .tri{position:absolute;width:0;height:0;border-left:.36in solid transparent;border-right:.36in solid transparent;border-bottom:.62in solid var(--teal);left:3.85in;top:.15in}
-.cover .dot{position:absolute;width:.32in;height:.32in;border-radius:50%;background:var(--citron);right:.8in;top:.55in}
-.cover .stage img{position:absolute;height:auto}
-.cover .s-t{width:2.55in;left:.6in;bottom:1.75in;transform:rotate(-7deg)}
-.cover .s-g{width:2.6in;right:.55in;bottom:1.8in;transform:rotate(7deg)}
-.cover .s-a{width:2.6in;left:1.8in;bottom:.08in;z-index:3}
-.cover .s-c{width:2.5in;left:4.25in;bottom:.08in;z-index:2}
-.cover .floor{position:absolute;left:.6in;right:.6in;bottom:0;height:.06in;border-radius:99px;background:var(--mint)}
-.cover .foot{position:absolute;left:.6in;right:.6in;bottom:.5in;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14pt}
-.cover .foot span{color:var(--white);background:var(--purple);padding:.04in .16in;border-radius:6px}
+.cover .band{position:absolute;left:0;right:0;top:6.4in;bottom:0;background:var(--coral)}
+.cover .row{position:absolute;left:.4in;right:.4in;top:4.5in;display:grid;grid-template-columns:repeat(4,1fr);z-index:2}
+.cover .row .it{display:flex;flex-direction:column;align-items:center;text-align:center}
+.cover .row .ph{height:2.25in;width:100%;display:flex;align-items:flex-end;justify-content:center}
+.cover .row img{max-height:2in;max-width:1.72in;width:auto;height:auto}
+.cover .row .nm{margin-top:.28in;font-weight:700;font-size:17pt;line-height:1}
+.cover .row .sk{margin-top:.07in;font-size:10pt;font-weight:500}
+.cover .row .ag{margin-top:.1in;display:inline-block;border:1.5px solid var(--ink);border-radius:99px;font-weight:700;font-size:8.5pt;letter-spacing:.12em;padding:.02in .12in}
+.cover .big{position:absolute;left:.6in;right:.6in;top:8.5in;font-weight:700;font-size:38pt;line-height:1.2;letter-spacing:-.02em}
+.cover .big span{color:var(--white);background:var(--purple);padding:0 .12in;border-radius:.08in}
+.cover .foot{position:absolute;left:.6in;right:.6in;bottom:.5in;font-weight:700;font-size:11pt;display:flex;justify-content:space-between}
 
 /* ── 2 BIG IDEA ── */
 .idea{background:var(--coral)}
@@ -166,15 +165,15 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
     <h1 class="script">Screen-free play</h1>
     <p class="sub"><b>Rebuilt for now.</b> The games you grew up with, engineered for how children learn today.</p>
   </div>
-  <div class="stage">
-    <span class="arch"></span><span class="tri"></span><span class="dot"></span>
-    <img class="s-t" src="../assets/tixxo.webp" alt="Tixxo">
-    <img class="s-a" src="../assets/abcube.webp" alt="ABCUBE">
-    <img class="s-c" src="../assets/cubit.webp" alt="Cubit">
-    <img class="s-g" src="../assets/intellect-pad.webp" alt="Intellect Pad">
-    <span class="floor"></span>
+  <div class="band"></div>
+  <div class="row">
+    <div class="it"><div class="ph"><img src="../assets/tixxo.webp" alt="Tixxo"></div><div class="nm">Tixxo</div><div class="sk">Logic · Memory</div><span class="ag">AGES 6+</span></div>
+    <div class="it"><div class="ph"><img src="../assets/abcube.webp" alt="ABCUBE"></div><div class="nm">ABCUBE</div><div class="sk">Spelling · Letters</div><span class="ag">AGES 4–7</span></div>
+    <div class="it"><div class="ph"><img src="../assets/intellect-pad.webp" alt="Intellect Pad"></div><div class="nm">Intellect Pad</div><div class="sk">Focus · Coordination</div><span class="ag">AGES 6+</span></div>
+    <div class="it"><div class="ph"><img src="../assets/cubit.webp" alt="Cubit"></div><div class="nm">Cubit</div><div class="sk">Patterns · Memory</div><span class="ag">AGES 6+</span></div>
   </div>
-  <div class="foot">Tixxo · ABCUBE · Cubit · Intellect Pad<span>Zero screens.</span></div>
+  <div class="big">Four games. One idea.<br><span>Zero screens.</span></div>
+  <div class="foot"><span>Yesterplay</span><span>Mind Their Future</span></div>
 </section>
 
 <!-- 2 · THE BIG IDEA -->

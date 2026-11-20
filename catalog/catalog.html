@@ -4,16 +4,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Yesterplay Catalog</title>
-<link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;700&display=block" rel="stylesheet">
 <style>
+@font-face{font-family:'Afacad';src:url('fonts/Afacad-400.ttf') format('truetype');font-weight:400}
+@font-face{font-family:'Afacad';src:url('fonts/Afacad-500.ttf') format('truetype');font-weight:500}
+@font-face{font-family:'Afacad';src:url('fonts/Afacad-700.ttf') format('truetype');font-weight:700}
+/* Stand-in for "Yesterplay Display" (custom script, not supplied). Sentence case, 3 words max. */
+@font-face{font-family:'Display';src:url('fonts/Pacifico-Regular.ttf') format('truetype');font-weight:400}
 :root{--coral:#F94730;--coral-text:#C4341A;--purple:#4C4BE3;--teal:#49BFBF;--teal-text:#2D8080;--mint:#AFD9D0;--citron:#EAEA6C;--ink:#1A1A1A;--white:#fff}
 @page{size:8.5in 11in;margin:0}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#fff}
-body{font-family:'Afacad',sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:'Afacad',sans-serif;color:var(--ink);font-kerning:normal;text-rendering:geometricPrecision;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;break-after:page}
 .page:last-child{page-break-after:auto;break-after:auto}
-h1,h2,h3{font-weight:700;line-height:1.02;letter-spacing:-.01em}
+h1,h2,h3{font-weight:700;line-height:1.02;letter-spacing:-.02em}
+.script,.idea .now.script{font-family:'Display',cursive;font-weight:400;font-synthesis:none;letter-spacing:0;line-height:1.15}
 .label{font-weight:700;font-size:9.5pt;letter-spacing:.16em;text-transform:uppercase}
 .pill{display:inline-block;padding:.32em 1.1em;border-radius:99px}
 .shape{position:absolute}
@@ -24,15 +29,16 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
 
 /* ── 1 COVER ── */
 .cover{background:var(--white)}
-.cover .c1{width:6.2in;height:6.2in;background:var(--coral);right:-1.6in;top:-1.5in}
+.cover .c1{width:4.6in;height:4.6in;background:var(--coral);right:-2.2in;top:-2.1in}
 .cover .c2{width:3in;height:3in;background:var(--purple);border-radius:100% 0 0 0;left:0;bottom:0;border-radius:0 100% 0 0}
 .cover .c3{width:0;height:0;border-left:.75in solid transparent;border-right:.75in solid transparent;border-bottom:1.3in solid var(--teal);right:.7in;bottom:2.15in}
 .cover .c4{width:.5in;height:.5in;background:var(--citron);left:3.4in;bottom:1.1in}
 .cover .c5{width:1.5in;height:.75in;border-radius:.75in .75in 0 0;background:var(--mint);right:2.2in;bottom:0}
 .cover .logo{position:absolute;left:.6in;top:.6in;width:3.3in}
-.cover .title{position:absolute;left:.6in;top:2.35in}
+.cover .title{position:absolute;left:.6in;top:2.3in;z-index:3}
 .cover .title .label{color:var(--coral-text)}
-.cover h1{font-size:62pt;margin:.12in 0 .14in}
+.cover h1{font-size:58pt;margin:.02in 0 .28in;color:var(--coral)}
+.cover h1.script{line-height:1.12}
 .cover .sub{font-size:16pt;max-width:4.3in;line-height:1.25}
 .cover .prods{position:absolute;left:0;right:0;top:4.95in;height:4.4in}
 .cover .prods img{position:absolute;filter:drop-shadow(0 .2in .2in rgba(26,26,26,.28))}
@@ -47,7 +53,7 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
 .idea .inner{position:absolute;inset:.75in .7in}
 .idea .pill{background:var(--ink);color:var(--white)}
 .idea h2{font-size:46pt;margin:.22in 0 .12in}
-.idea .now{font-size:20pt;font-weight:700;color:var(--white);background:var(--purple);display:inline-block;padding:.03in .16in;border-radius:6px}
+.idea .now{font-size:22pt;padding-bottom:.08in!important;font-weight:700;color:var(--white);background:var(--purple);display:inline-block;padding:.03in .16in;border-radius:6px}
 .idea .cols{display:grid;grid-template-columns:1fr 1fr;gap:.35in;font-size:11.6pt;line-height:1.5;margin-top:.38in}
 .idea .halfc{width:2.6in;height:1.3in;border-radius:0 0 1.3in 1.3in;background:var(--purple);right:-.4in;top:0}
 .feats{display:grid;grid-template-columns:1fr 1fr;gap:.18in;margin-top:.45in}
@@ -83,9 +89,9 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
 .spec .modes ol.one{columns:1}
 .spec .modes ol{list-style:none;columns:2;column-gap:.18in;font-size:10.4pt;line-height:1.6}
 .spec .modes li::before{content:'';display:inline-block;width:.075in;height:.075in;border-radius:50%;margin-right:.08in;vertical-align:middle;background:var(--dot)}
-.price{margin-top:.2in;display:flex;justify-content:space-between;align-items:baseline;background:var(--ink);color:var(--white);border-radius:.18in;padding:.14in .24in}
-.price span{font-size:9.5pt;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
-.price b{font-size:20pt}
+.price{gap:.18in;margin-top:.2in;display:flex;justify-content:space-between;align-items:baseline;background:var(--ink);color:var(--white);border-radius:.18in;padding:.14in .24in}
+.price span{white-space:nowrap;font-size:8.6pt;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.price b{white-space:nowrap;font-size:14pt;color:var(--citron)}
 
 /* ── LINEUP ── */
 .lineup .inner{position:absolute;inset:.7in .6in}
@@ -137,7 +143,7 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
 .back .contact{position:absolute;left:.7in;right:.7in;bottom:.85in;display:grid;grid-template-columns:auto 1fr;gap:.5in;align-items:end}
 .back .contact img{width:2.9in}
 .back .contact .info{font-size:12.5pt;line-height:1.6;text-align:right}
-.back .contact .info b{font-size:15pt}
+.back .contact .info .talk{font-size:30pt;color:var(--citron);margin-bottom:.06in}
 .back .d1{width:2.4in;height:2.4in;background:var(--coral);right:-.8in;top:-.8in}
 .back .d2{width:.7in;height:.7in;background:var(--teal);right:1.9in;top:.5in}
 .back .bunt{position:absolute;left:.7in;right:.7in;bottom:2.55in;display:flex;gap:.05in}
@@ -156,8 +162,8 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
   <img class="logo" src="../assets/logo-badge.svg" alt="Yesterplay">
   <div class="title">
     <div class="label">The Collection · 2026</div>
-    <h1>Screen-free<br>play, rebuilt.</h1>
-    <p class="sub">The games you grew up with, engineered for how children learn now.</p>
+    <h1 class="script">Screen-free play</h1>
+    <p class="sub"><b>Rebuilt for now.</b> The games you grew up with, engineered for how children learn today.</p>
   </div>
   <div class="prods">
     <img class="p-t" src="../assets/tixxo.webp" alt="">
@@ -173,7 +179,7 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
   <div class="inner">
     <span class="label pill">The Big Idea</span>
     <h2>Once upon a time,<br>play built minds.</h2>
-    <span class="now">That time is now.</span>
+    <span class="now script">That time is now</span>
     <div class="cols">
       <p>Toys have come a long way. The average child carries their own smartphone in their pocket. <b>That’s not progress, though.</b> For child development, less is more. Unfettered Internet access, reward-heavy gamification and short-form stimulation wear down a child’s ability to focus, process and think things through.</p>
       <p><b>Yesterplay strikes the middle ground between board games and iPhones.</b> Each toy is built for maximum engagement and maximum development. Pocketable forms, solo and team play, and modern light and sound keep children involved. The retro heart of every game keeps minds firing in all the right ways.</p>
@@ -215,7 +221,7 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
         </dl>
         <div class="modes"><ol class="one"><li>vs. Computer</li><li>2-Player Duel</li><li>Sequence Memory</li></ol></div>
       </div>
-      <div class="price"><span>Retail</span><b>$29.99</b></div>
+      <div class="price"><span>Bulk &amp; educational pricing</span><b>Ask us →</b></div>
     </div>
   </div>
   <div class="folio"><b>Yesterplay</b><span>The Collection · 03</span></div>
@@ -248,7 +254,7 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
         </dl>
         <div class="modes"><ol><li>Catch Me</li><li>Follow Me</li><li>Remember Me</li><li>Chase Me</li><li>Lightshow</li></ol></div>
       </div>
-      <div class="price"><span>Retail</span><b>$32.99</b></div>
+      <div class="price"><span>Bulk &amp; educational pricing</span><b>Ask us →</b></div>
     </div>
   </div>
   <div class="folio"><b>Yesterplay</b><span>The Collection · 04</span></div>
@@ -257,7 +263,8 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
 <!-- 5 · COGGO -->
 <section class="page prod">
   <div class="hero">
-    <span class="age" style="right:auto;left:.6in">AGES 6+</span>
+    <div class="wm script" style="font-size:52pt;line-height:.95in;color:var(--coral)">coggo</div>
+    <span class="age">AGES 6+</span>
     <div class="block" style="background:var(--teal)"></div>
     <img class="shot" src="../assets/coggo.webp" alt="Coggo">
   </div>
@@ -280,7 +287,7 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
         </dl>
         <div class="modes"><ol><li>Recall Rush</li><li>Catch Zone</li><li>Path Finder</li><li>Brainboard</li><li>Spin Twist</li><li>Dash Clash</li><li>Speed Hunt</li><li>Glow Show</li></ol></div>
       </div>
-      <div class="price"><span>Retail</span><b>$32.99</b></div>
+      <div class="price"><span>Bulk &amp; educational pricing</span><b>Ask us →</b></div>
     </div>
   </div>
   <div class="folio"><b>Yesterplay</b><span>The Collection · 05</span></div>
@@ -290,19 +297,19 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
 <section class="page lineup">
   <div class="inner">
     <span class="label pill">The Line-up</span>
-    <h2>Pick their game.</h2>
+    <h2 class="script" style="color:var(--coral);font-size:48pt;line-height:1.25;margin-bottom:.22in">Pick their game</h2>
     <p class="intro">Three toys, sixteen ways to play. Every one is offline, tough and built to be played again and again.</p>
     <div class="cards">
       <div class="card"><div class="top" style="background:var(--purple)"><img src="../assets/tixxo.webp" alt=""></div><div class="bd"><h3>Tixxo<sup>®</sup></h3><div class="sk">Logic · Collaboration · Memory</div>
-        <table><tr><td>Ages</td><td>6+</td></tr><tr><td>Ways to play</td><td>3</td></tr><tr><td>Players</td><td>1–2</td></tr><tr><td>Retail</td><td>$29.99</td></tr></table></div></div>
+        <table><tr><td>Ages</td><td>6+</td></tr><tr><td>Ways to play</td><td>3</td></tr><tr><td>Players</td><td>1–2</td></tr></table></div></div>
       <div class="card"><div class="top" style="background:var(--coral)"><img src="../assets/cubit.webp" alt=""></div><div class="bd"><h3>Cubit<sup>®</sup></h3><div class="sk">Patterns · Self-Regulation · Memory</div>
-        <table><tr><td>Ages</td><td>6+</td></tr><tr><td>Ways to play</td><td>5</td></tr><tr><td>Players</td><td>1+</td></tr><tr><td>Retail</td><td>$32.99</td></tr></table></div></div>
+        <table><tr><td>Ages</td><td>6+</td></tr><tr><td>Ways to play</td><td>5</td></tr><tr><td>Players</td><td>1+</td></tr></table></div></div>
       <div class="card"><div class="top" style="background:var(--teal)"><img src="../assets/coggo.webp" alt=""></div><div class="bd"><h3>Coggo<sup>®</sup></h3><div class="sk">Coordination · Focus · Self-Regulation</div>
-        <table><tr><td>Ages</td><td>6+</td></tr><tr><td>Ways to play</td><td>8</td></tr><tr><td>Players</td><td>1+</td></tr><tr><td>Retail</td><td>$32.99</td></tr></table></div></div>
+        <table><tr><td>Ages</td><td>6+</td></tr><tr><td>Ways to play</td><td>8</td></tr><tr><td>Players</td><td>1+</td></tr></table></div></div>
     </div>
   </div>
   <div class="strip">
-    <img src="../assets/life-2.webp" alt=""><img src="../assets/life-1.webp" alt=""><img src="../assets/life-4.webp" alt=""><img src="../assets/cubit-box.webp" alt="">
+    <img src="../assets/life-2.webp" alt=""><img src="../assets/life-1.webp" alt=""><img src="../assets/life-4.webp" alt=""><img src="../assets/life-3.webp" alt="" style="object-position:center 20%">
   </div>
   <div class="folio"><b>Yesterplay</b><span>The Collection · 06</span></div>
 </section>
@@ -323,7 +330,7 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
     <img src="../assets/life-3.webp" alt="">
     <img src="../assets/life-2.webp" alt="" style="object-position:center 30%">
   </div>
-  <div class="say">Press it. Beat it.<br><em>Do it again.</em></div>
+  <div class="say">Press it. Beat it.<br><em class="script" style="font-size:30pt">Do it again</em></div>
   <div class="folio" style="left:4.35in"><b>Yesterplay</b><span>The Collection · 07</span></div>
 </section>
 
@@ -338,15 +345,15 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
     <div class="ways">
       <div class="way"><div class="n">1</div><h3>Buy Bulk</h3><p>Schools, daycares and gifting programs. Ask about volume pricing.</p></div>
       <div class="way"><div class="n">2</div><h3>Sell Yesterplay</h3><p>Stock our toys in your store or on your marketplace.</p></div>
-      <div class="way"><div class="n">3</div><h3>Shop Direct</h3><p>Order online at yesterplay.com and we ship to your door.</p></div>
+      <div class="way"><div class="n">3</div><h3>Shop Direct</h3><p>Order online and we ship straight to your door.</p></div>
     </div>
   </div>
   <div class="bunt"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="contact">
     <img src="../assets/logo-badge.svg" alt="Yesterplay">
-    <div class="info"><b>Let’s talk toys.</b><br>info@yesterplay.com · (201) 252-7025<br>101 Henley Ave, Suite 401, New Milford, NJ 07646</div>
+    <div class="info"><div class="script talk">Let’s talk toys</div>Simon@gmsimports.com · (201) 252-7025<br>101 Henley Ave, Suite 401, New Milford, NJ 07646</div>
   </div>
-  <div class="fine"><span>© 2026 Yesterplay • All Rights Reserved</span><span>Prices are suggested retail in USD and may change.</span></div>
+  <div class="fine"><span>© 2026 Yesterplay • All Rights Reserved</span><span>Mind Their Future®</span></div>
 </section>
 
 </body>

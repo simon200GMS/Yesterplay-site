@@ -17,6 +17,7 @@ if len(sys.argv) > 1:  # re-export product wordmarks from the logo file (pages 4
         svg = r.get_svg_image(text_as_path=True)
         open(os.path.join(HERE, name + ".svg"), "w", encoding="utf-8").write(svg)
 
+# fonts are local static TTFs in catalog/fonts so Chrome embeds real fonts (a web/variable font becomes blurry Type 3)
 browsers = [r"C:\Program Files\Google\Chrome\Application\chrome.exe",
             r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"]
 exe = next(b for b in browsers if os.path.exists(b))

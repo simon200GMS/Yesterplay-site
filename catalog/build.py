@@ -9,10 +9,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 OUT = os.path.join(ROOT, "assets", "Yesterplay-Catalog.pdf")
 
-if len(sys.argv) > 1:  # re-export product wordmarks from the logo file (pages 4 and 6)
+if len(sys.argv) > 1:  # re-export product wordmarks from the logo file (pages 4-6)
     import fitz
     doc = fitz.open(sys.argv[1])
-    for page, name in [(3, "wm-tixxo"), (5, "wm-cubit")]:
+    for page, name in [(3, "wm-tixxo"), (4, "wm-intellect"), (5, "wm-cubit")]:
         r = doc[page]
         svg = r.get_svg_image(text_as_path=True)
         open(os.path.join(HERE, name + ".svg"), "w", encoding="utf-8").write(svg)

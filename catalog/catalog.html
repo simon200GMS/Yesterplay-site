@@ -30,24 +30,19 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
 /* ── 1 COVER ── */
 .cover{background:var(--white)}
 .cover .c1{width:4.6in;height:4.6in;background:var(--coral);right:-2.2in;top:-2.1in}
-.cover .c2{width:3in;height:3in;background:var(--purple);border-radius:100% 0 0 0;left:0;bottom:0;border-radius:0 100% 0 0}
-.cover .c3{width:0;height:0;border-left:.75in solid transparent;border-right:.75in solid transparent;border-bottom:1.3in solid var(--teal);right:.7in;bottom:2.15in}
-.cover .c4{width:.5in;height:.5in;background:var(--citron);left:3.4in;bottom:1.1in}
-.cover .c5{width:1.5in;height:.75in;border-radius:.75in .75in 0 0;background:var(--mint);right:2.2in;bottom:0}
+.cover .c4{width:.42in;height:.42in;background:var(--citron);right:.6in;top:3.55in}
 .cover .logo{position:absolute;left:.6in;top:.6in;width:3.3in}
 .cover .title{position:absolute;left:.6in;top:2.3in;z-index:3}
 .cover .title .label{color:var(--coral-text)}
 .cover h1{font-size:58pt;margin:.02in 0 .28in;color:var(--coral)}
 .cover h1.script{line-height:1.12}
 .cover .sub{font-size:16pt;max-width:4.3in;line-height:1.25}
-.cover .prods{position:absolute;left:0;right:0;top:4.95in;height:4.4in}
-.cover .prods img{position:absolute;filter:drop-shadow(0 .2in .2in rgba(26,26,26,.28))}
-.cover .p-t{width:2.35in;left:.3in;top:.75in;transform:rotate(-8deg)}
-.cover .p-a{width:2.45in;left:2.15in;top:1.55in;z-index:3}
-.cover .p-c{width:2.3in;left:4.05in;top:1.05in;z-index:2}
-.cover .p-g{width:2.35in;left:5.9in;top:.35in;transform:rotate(7deg)}
-.cover .tag{position:absolute;right:.6in;bottom:.55in;text-align:right;color:var(--ink);font-weight:700;font-size:13pt;line-height:1.3;z-index:3}
-.cover .tag span{color:var(--white);background:var(--purple);padding:.04in .14in;border-radius:4px}
+.cover .grid{position:absolute;left:.6in;right:.6in;top:4.45in;display:grid;grid-template-columns:1fr 1fr;gap:.2in}
+.cover .tile{position:relative;height:2.68in;border-radius:.3in;display:grid;place-items:center;overflow:hidden}
+.cover .tile img{height:2.15in;width:auto;max-width:82%;object-fit:contain}
+.cover .tile .nm{position:absolute;left:.16in;bottom:.14in;background:var(--white);color:var(--ink);font-weight:700;font-size:11pt;padding:.03in .15in;border-radius:99px}
+.cover .foot{position:absolute;left:.6in;right:.6in;bottom:.5in;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14pt}
+.cover .foot span{color:var(--white);background:var(--purple);padding:.04in .16in;border-radius:6px}
 
 /* ── 2 BIG IDEA ── */
 .idea{background:var(--coral)}
@@ -159,21 +154,20 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
 
 <!-- 1 · COVER -->
 <section class="page cover">
-  <span class="shape circle c1"></span><span class="shape c2"></span><span class="shape c3"></span>
-  <span class="shape circle c4"></span><span class="shape c5"></span>
+  <span class="shape circle c1"></span><span class="shape circle c4"></span>
   <img class="logo" src="../assets/logo-badge.svg" alt="Yesterplay">
   <div class="title">
     <div class="label">The Collection · 2026</div>
     <h1 class="script">Screen-free play</h1>
     <p class="sub"><b>Rebuilt for now.</b> The games you grew up with, engineered for how children learn today.</p>
   </div>
-  <div class="prods">
-    <img class="p-t" src="../assets/tixxo.webp" alt="">
-    <img class="p-a" src="../assets/abcube.webp" alt="">
-    <img class="p-c" src="../assets/cubit.webp" alt="">
-    <img class="p-g" src="../assets/intellect-pad.webp" alt="">
+  <div class="grid">
+    <div class="tile" style="background:var(--purple)"><img src="../assets/tixxo.webp" alt="Tixxo"><span class="nm">Tixxo</span></div>
+    <div class="tile" style="background:var(--coral)"><img src="../assets/cubit.webp" alt="Cubit"><span class="nm">Cubit</span></div>
+    <div class="tile" style="background:var(--teal)"><img src="../assets/intellect-pad.webp" alt="Intellect Pad"><span class="nm">Intellect Pad</span></div>
+    <div class="tile" style="background:var(--purple)"><img src="../assets/abcube.webp" alt="ABCUBE"><span class="nm">ABCUBE</span></div>
   </div>
-  <div class="tag">Tixxo · Cubit · Intellect Pad · ABCUBE<br><span>Zero screens.</span></div>
+  <div class="foot">Four games. One idea.<span>Zero screens.</span></div>
 </section>
 
 <!-- 2 · THE BIG IDEA -->

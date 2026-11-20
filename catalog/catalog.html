@@ -30,17 +30,22 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
 /* ── 1 COVER ── */
 .cover{background:var(--white)}
 .cover .c1{width:4.6in;height:4.6in;background:var(--coral);right:-2.2in;top:-2.1in}
-.cover .c4{width:.42in;height:.42in;background:var(--citron);right:.6in;top:3.55in}
 .cover .logo{position:absolute;left:.6in;top:.6in;width:3.3in}
 .cover .title{position:absolute;left:.6in;top:2.3in;z-index:3}
 .cover .title .label{color:var(--coral-text)}
 .cover h1{font-size:58pt;margin:.02in 0 .28in;color:var(--coral)}
 .cover h1.script{line-height:1.12}
 .cover .sub{font-size:16pt;max-width:4.3in;line-height:1.25}
-.cover .grid{position:absolute;left:.6in;right:.6in;top:4.45in;display:grid;grid-template-columns:1fr 1fr;gap:.2in}
-.cover .tile{position:relative;height:2.68in;border-radius:.3in;display:grid;place-items:center;overflow:hidden}
-.cover .tile img{height:2.15in;width:auto;max-width:82%;object-fit:contain}
-.cover .tile .nm{position:absolute;left:.16in;bottom:.14in;background:var(--white);color:var(--ink);font-weight:700;font-size:11pt;padding:.03in .15in;border-radius:99px}
+.cover .stage{position:absolute;left:0;right:0;bottom:1.05in;height:5.6in}
+.cover .arch{position:absolute;left:.75in;right:.75in;bottom:0;height:3.5in;border-radius:3.5in 3.5in 0 0;background:var(--purple)}
+.cover .tri{position:absolute;width:0;height:0;border-left:.36in solid transparent;border-right:.36in solid transparent;border-bottom:.62in solid var(--teal);left:3.85in;top:.15in}
+.cover .dot{position:absolute;width:.32in;height:.32in;border-radius:50%;background:var(--citron);right:.8in;top:.55in}
+.cover .stage img{position:absolute;height:auto}
+.cover .s-t{width:2.55in;left:.6in;bottom:1.75in;transform:rotate(-7deg)}
+.cover .s-g{width:2.6in;right:.55in;bottom:1.8in;transform:rotate(7deg)}
+.cover .s-a{width:2.6in;left:1.8in;bottom:.08in;z-index:3}
+.cover .s-c{width:2.5in;left:4.25in;bottom:.08in;z-index:2}
+.cover .floor{position:absolute;left:.6in;right:.6in;bottom:0;height:.06in;border-radius:99px;background:var(--mint)}
 .cover .foot{position:absolute;left:.6in;right:.6in;bottom:.5in;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14pt}
 .cover .foot span{color:var(--white);background:var(--purple);padding:.04in .16in;border-radius:6px}
 
@@ -154,20 +159,22 @@ sup{font-size:.42em;vertical-align:super;font-weight:500}
 
 <!-- 1 · COVER -->
 <section class="page cover">
-  <span class="shape circle c1"></span><span class="shape circle c4"></span>
+  <span class="shape circle c1"></span>
   <img class="logo" src="../assets/logo-badge.svg" alt="Yesterplay">
   <div class="title">
     <div class="label">The Collection · 2026</div>
     <h1 class="script">Screen-free play</h1>
     <p class="sub"><b>Rebuilt for now.</b> The games you grew up with, engineered for how children learn today.</p>
   </div>
-  <div class="grid">
-    <div class="tile" style="background:var(--purple)"><img src="../assets/tixxo.webp" alt="Tixxo"><span class="nm">Tixxo</span></div>
-    <div class="tile" style="background:var(--coral)"><img src="../assets/cubit.webp" alt="Cubit"><span class="nm">Cubit</span></div>
-    <div class="tile" style="background:var(--teal)"><img src="../assets/intellect-pad.webp" alt="Intellect Pad"><span class="nm">Intellect Pad</span></div>
-    <div class="tile" style="background:var(--purple)"><img src="../assets/abcube.webp" alt="ABCUBE"><span class="nm">ABCUBE</span></div>
+  <div class="stage">
+    <span class="arch"></span><span class="tri"></span><span class="dot"></span>
+    <img class="s-t" src="../assets/tixxo.webp" alt="Tixxo">
+    <img class="s-a" src="../assets/abcube.webp" alt="ABCUBE">
+    <img class="s-c" src="../assets/cubit.webp" alt="Cubit">
+    <img class="s-g" src="../assets/intellect-pad.webp" alt="Intellect Pad">
+    <span class="floor"></span>
   </div>
-  <div class="foot">Four games. One idea.<span>Zero screens.</span></div>
+  <div class="foot">Tixxo · ABCUBE · Cubit · Intellect Pad<span>Zero screens.</span></div>
 </section>
 
 <!-- 2 · THE BIG IDEA -->
